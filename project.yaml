@@ -10,9 +10,9 @@ schema:
 
 network:
   chainId: "columbus-5" # Terra network code
-  endpoint: "wss://terra-columbus-5.api.onfinality.io/public-ws"
+  endpoint: "https://terra-columbus-5.api.onfinality.io"
   # Optionally provide the HTTP endpoint of a full chain dictionary to speed up processing
-  dictionary: "https://api.subquery.network/sq/subquery/dictionary-terra-columbus-5"
+  dictionary: "https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary"
 
 dataSources:
   - kind: terra/Runtime
