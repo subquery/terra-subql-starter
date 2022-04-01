@@ -46,8 +46,8 @@ services:
     depends_on:
       'postgres':
         condition: service_healthy
-      'subquery-node-terra':
-        condition: service_healthy
+      #'subquery-node':
+       # condition: service_healthy
     restart: always
     environment:
       DB_USER: postgres
