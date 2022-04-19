@@ -1,26 +1,30 @@
-specVersion: "0.3.0"
-
-name: "terra-subql-starter"
-version: "0.0.1"
-description: "This project can be use as a starting point for developing your Terra based SubQuery project"
-repository: "https://github.com/subquery/terra-subql-starter"
-
+specVersion: 1.0.0
+name: terra-subql-starter
+version: 0.0.1
+runner:
+  node:
+    name: '@subql/node-terra'
+    version: '*'
+  query:
+    name: '@subql/query'
+    version: '*'
+description: >-
+  This project can be use as a starting point for developing your Terra based
+  SubQuery project
+repository: https://github.com/subquery/terra-subql-starter
 schema:
-  file: "./schema.graphql"
-
+  file: ./schema.graphql
 network:
-  chainId: "columbus-5" # Terra network code
-  endpoint: "https://terra-columbus-5.beta.api.onfinality.io"
-  # Optionally provide the HTTP endpoint of a full chain dictionary to speed up processing
-  dictionary: "https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary"
+  chainId: columbus-5
+  endpoint: https://terra-columbus-5.beta.api.onfinality.io
+  dictionary: https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary
   # Optionally provide a mantlemint endpoint to further speed up processing
   mantlemint: "https://mantlemint.terra-columbus-5.beta.api.onfinality.io:1320"
-
 dataSources:
   - kind: terra/Runtime
     startBlock: 4724001
     mapping:
-      file: "./dist/index.js"
+      file: ./dist/index.js
       handlers:
         - handler: handleBlock
           kind: terra/BlockHandler
@@ -31,12 +35,12 @@ dataSources:
           filter:
             type: transfer
             messageFilter:
-              type: "/terra.wasm.v1beta1.MsgExecuteContract"
+              type: /terra.wasm.v1beta1.MsgExecuteContract
               values:
-                contract: "terra1j66jatn3k50hjtg2xemnjm8s7y8dws9xqa5y8w"
+                contract: terra1j66jatn3k50hjtg2xemnjm8s7y8dws9xqa5y8w
         - handler: handleMessage
           kind: terra/MessageHandler
           filter:
-            type: "/terra.wasm.v1beta1.MsgExecuteContract"
+            type: /terra.wasm.v1beta1.MsgExecuteContract
             values:
-              contract: "terra1j66jatn3k50hjtg2xemnjm8s7y8dws9xqa5y8w"
+              contract: terra1j66jatn3k50hjtg2xemnjm8s7y8dws9xqa5y8w
