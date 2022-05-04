@@ -18,7 +18,7 @@ network:
   chainId: columbus-5
   endpoint: https://terra-columbus-5.beta.api.onfinality.io
   dictionary: https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary
-  # Optionally provide a mantlemint endpoint to further speed up processing
+  # It is strongly suggested that you provide a mantlemint endpoint to speed up processing
   mantlemint: "https://mantlemint.terra-columbus-5.beta.api.onfinality.io:1320"
 dataSources:
   - kind: terra/Runtime
