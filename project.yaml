@@ -18,8 +18,12 @@ network:
   chainId: columbus-5
   endpoint: https://terra-columbus-5.beta.api.onfinality.io
   dictionary: https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary
-  # It is strongly suggested that you provide a mantlemint endpoint to speed up processing
-  mantlemint: "https://mantlemint.terra-columbus-5.beta.api.onfinality.io:1320"
+  # It is strongly suggested that you provide a mantlemint endpoint (only on Columbus-5) to speed up processing
+  mantlemint: https://mantlemint.terra-columbus-5.beta.api.onfinality.io:1320
+  ## You can alternatively go with Bombay-12
+  # chainId: bombay-12
+  # endpoint: https://terra-bombay-12.beta.api.onfinality.io
+  # dictionary: https://api.subquery.network/sq/subquery/terra-bombay-12-dictionary
 dataSources:
   - kind: terra/Runtime
     startBlock: 4724001
